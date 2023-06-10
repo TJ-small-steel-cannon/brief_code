@@ -1,8 +1,8 @@
-
+import Console from "./pages/xxx";
 function App() {
   return (
     <div className="App">
-      app
+      <Console></Console>
     </div>
   );
 }
