@@ -1,0 +1,12 @@
+.container{
+    width: 60%;
+    height: 100vh;
+    background: #bfa;
+    display: flex;
+    justify-content: center;
+}
+.box{
+    width: 90%;
+    height: 100%;
+    background: red;
+}
