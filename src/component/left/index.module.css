@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    height: 100%;
+
+    background: #343541;
+    color: #ffffff;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.text {
+    height: 5%;
+    min-height: 5%;
+    width: 100%;
+    text-align: center;
+    background-color: #444654;
+}
+
+.box {
+    width: 80%;
+    height: 25%;
+    max-width: 200px;
+    max-height: 200px;
+    background-color: aqua;
+    margin-bottom: 1%;
+}
+
+.bigbox {
+    display: flex;
+    height: 95%;
+    width: 100%;
+    background: #343541;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.slideOutLeft {
+    animation: slideOutLeft 0.5s ease-out forwards;
+}

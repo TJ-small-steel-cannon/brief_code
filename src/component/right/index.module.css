@@ -1,0 +1,9 @@
+.container {
+    height: 100vh;
+    background: #343541;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #ffffff;
+}
