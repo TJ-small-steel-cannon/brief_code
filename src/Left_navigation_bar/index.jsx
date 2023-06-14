@@ -5,11 +5,13 @@ import classes from './index.module.css'
 function Leftnav() {
 
     const [isVisible, setIsVisible] = useState(0);
-
-    const handleMouseEnter = () => { setIsVisible(1) };
-    const handleMouseLeave = () => { setIsVisible(0) };
+    const [sum, setSum] = useState()
 
 
+    const handleMouseEnter = () => { setIsVisible(1)};
+    const handleMouseLeave = () => { setIsVisible(0)};
+
+    // 一级菜单数据
     const [leftnav] = useState({
         leftnav: [
             {
@@ -213,6 +215,7 @@ function Leftnav() {
         ]
     })
 
+    // 二级菜单数据
     const [SecData] = useState({ 
         secdata: [
             {
@@ -245,10 +248,10 @@ function Leftnav() {
             },
             {
                 "id": 2,
-                "value1": "大家电",
-                "value2": "平板电视",
+                "value1": "手机通讯",
+                "value2": "手机",
                 "hyperlinks2": "#",
-                "value3": "空调",
+                "value3": "对讲机",
                 "hyperlinks3": "#",
                 "value4": "洗衣机",
                 "hyperlinks4": "#",
@@ -264,12 +267,6 @@ function Leftnav() {
                 "hyperlinks9": "#",
                 "value10": "平板电视",
                 "hyperlinks10": "#",
-                "value11": "空调",
-                "hyperlinks11": "#",
-                "value12": "洗衣机",
-                "hyperlinks12": "#",
-                "value13": "DVD/电视盒子",
-                "hyperlinks13": "#"
             },
             {
                 "id": 3,
@@ -663,6 +660,62 @@ function Leftnav() {
                 "value13": "DVD/电视盒子",
                 "hyperlinks13": "#"
             },
+            {
+                "id": 17,
+                "value1": "大家电",
+                "value2": "平板电视",
+                "hyperlinks2": "#",
+                "value3": "空调",
+                "hyperlinks3": "#",
+                "value4": "洗衣机",
+                "hyperlinks4": "#",
+                "value5": "DVD/电视盒子",
+                "hyperlinks5": "#",
+                "value6": "平板电视",
+                "hyperlinks6": "#",
+                "value7": "空调",
+                "hyperlinks7": "#",
+                "value8": "洗衣机",
+                "hyperlinks8": "#",
+                "value9": "DVD/电视盒子",
+                "hyperlinks9": "#",
+                "value10": "平板电视",
+                "hyperlinks10": "#",
+                "value11": "空调",
+                "hyperlinks11": "#",
+                "value12": "洗衣机",
+                "hyperlinks12": "#",
+                "value13": "DVD/电视盒子",
+                "hyperlinks13": "#"
+            },
+            {
+                "id": 18,
+                "value1": "大家电",
+                "value2": "平板电视",
+                "hyperlinks2": "#",
+                "value3": "空调",
+                "hyperlinks3": "#",
+                "value4": "洗衣机",
+                "hyperlinks4": "#",
+                "value5": "DVD/电视盒子",
+                "hyperlinks5": "#",
+                "value6": "平板电视",
+                "hyperlinks6": "#",
+                "value7": "空调",
+                "hyperlinks7": "#",
+                "value8": "洗衣机",
+                "hyperlinks8": "#",
+                "value9": "DVD/电视盒子",
+                "hyperlinks9": "#",
+                "value10": "平板电视",
+                "hyperlinks10": "#",
+                "value11": "空调",
+                "hyperlinks11": "#",
+                "value12": "洗衣机",
+                "hyperlinks12": "#",
+                "value13": "DVD/电视盒子",
+                "hyperlinks13": "#"
+            },
         ]
     })
 
@@ -671,7 +724,8 @@ function Leftnav() {
             <div className={classes.left_navbar}>
                 <ul className={classes.list_item}>
                     {leftnav.leftnav.map((nav) => (
-                        <li key={nav.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        <li key={nav.id} onMouseEnter={()=>{handleMouseEnter();setSum(nav.id-1);}} onMouseLeave={()=>{handleMouseLeave();setSum(0)}}>
+                            
                             <a href={nav.hyperlinks1}>{nav.name1}</a>
 
                             {nav.name2 && (
@@ -698,11 +752,11 @@ function Leftnav() {
             </div>
 
 
-
+            {/* 二级菜单 */}
             {isVisible===1 &&
                         <div className={classes.Secondary_menu} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                             <div className={classes.Secondary_menu_div}>
-                                {SecData.secdata.slice(0, 5).map((sec) => (
+                                {SecData.secdata.slice(sum, sum+1).map((sec) => (
                                     <>
                                         <div key={sec.id}>{sec.value1}</div>
                                         <ul>

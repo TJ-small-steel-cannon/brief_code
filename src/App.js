@@ -32,7 +32,6 @@ function App() {
         <div className='centernav'>
           {/* 左侧导航栏 */}
           <Leftnav></Leftnav>
-          {/* 二级菜单 */}
 
           {/* 轮播图 */}
           <CarouselMap></CarouselMap>
