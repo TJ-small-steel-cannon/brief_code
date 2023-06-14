@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logoImg from './logo.png';
-import './logo.css'
+import classes from './index.module.css'
 
 /* eslint-disable jsx-a11y/alt-text */
 function Logo() {
@@ -14,17 +14,17 @@ function Logo() {
         ]
     })
     return (
-        <div className='header'>
-            <div className='herder_logo'>
+        <div className={classes.header}>
+            <div className={classes.herder_logo}>
                 {logodata.logo.map((logo) => (
-                    <img src={logo.img} className="header_img" key={logo.id} />
+                    <img src={logo.img} className={classes.header_img} key={logo.id} />
                 ))}
             </div>
-            <div className='header_search'>
-                <form method='get' action='#' className='header_form'>
-                    <input type='text' className='header_text'></input>
+            <div className={classes.header_search}>
+                <form method='get' action='#' className={classes.header_form}>
+                    <input type='text' className={classes.header_text}></input>
                     {logodata.logo.map((logo) => (
-                        <button className='header_button'>{logo.text}</button>
+                        <button className={classes.header_button}>{logo.text}</button>
                     ))}
                 </form>
             </div>

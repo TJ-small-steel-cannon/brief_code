@@ -1,5 +1,6 @@
 import { useState } from "react";
-import './navbar.css'
+import classes from './index.module.css'
+import classnames from 'classnames';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Navbar() {
@@ -67,20 +68,22 @@ function Navbar() {
               }            
         ]
     })
+
+    const headerFontClasses = classnames(classes.navbar__item, classes.iconfont);
     return (
-        <div className="navbar">
-            <div className="navbar__middle">
+        <div className={classes.navbar}>
+            <div className={classes.navbar__middle}>
                 {navbar_left.navbar.map((nav) => (
-                    <span className="navbar__item" key={nav.id}><a href={nav.name}>{nav.name}</a></span>
+                    <span className={classes.navbar__item} key={nav.id}><a href={nav.name}>{nav.name}</a></span>
                 ))}
-                <i className="navbar__item iconfont icon-email"></i>
-                <i className="navbar__item iconfont icon-phone"></i>
-                <i className="navbar__item iconfont icon-speaker"></i>
-                <i className="navbar__item iconfont icon-user"></i>
+                <i className={headerFontClasses}></i>
+                <i className={headerFontClasses}></i>
+                <i className={headerFontClasses}></i>
+                <i className={headerFontClasses}></i>
             </div>
-            <div className="navbar__right">
+            <div className={classes.navbar__right}>
                 {navbar_right.navbar.map((nav) =>(
-                    <span className="navbar__item" key={nav.id}><a href={nav.name}>{nav.name}</a></span>
+                    <span className={classes.navbar__item} key={nav.id}><a href={nav.name}>{nav.name}</a></span>
                 ))}
             </div>
         </div>

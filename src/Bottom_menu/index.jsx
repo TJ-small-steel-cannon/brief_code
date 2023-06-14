@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Bottom_menu.css'
+import classes from './index.module.css'
 
 function BottomMenu() {
     const [FooterData] = useState({
@@ -67,10 +67,10 @@ function BottomMenu() {
         ]
     })
     return (
-        <div className='footer'>
-            <div className='footer_top'>
+        <div className={classes.footer}>
+            <div className={classes.footer_top}>
                 {FooterData.footerdata.slice(0, 5).map((foot) => (
-                    <ul className='footer_ul' key={foot.id}>
+                    <ul className={classes.footer_ul} key={foot.id}>
                         <li>{foot.value1}</li>
                         <li>{foot.value2}</li>
                         <li>{foot.value3}</li>
@@ -83,7 +83,7 @@ function BottomMenu() {
 
             </div>
 
-            <div className='footer_bottom'>
+            <div className={classes.footer_bottom}>
                 {FooterData.footerdata.slice(5, 6).map((foot) => (
                     <ul key={foot.id}>
                         <li>{foot.value1}</li>

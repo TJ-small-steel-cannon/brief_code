@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 
 import { useState } from "react";
-import './Right_navigation_bar.css';
+import classes from './index.module.css'
 import Icon1 from './icon1.png';
 import Icon2 from './icon2.png';
 import RecommendedChart from './Recommended_Chart.png';
@@ -131,11 +131,11 @@ function Rightnav() {
     })
 
     return (
-        <div className='right_nacbar'>
-            <div className='right_nacbar_top'>
-                <div className='right_nacbar_top_a'>
-                    <span className='font_a'>快报</span>
-                    <span className='font_b'><a href='#'>更多</a></span>
+        <div className={classes.right_nacbar}>
+            <div className={classes.right_nacbar_top}>
+                <div className={classes.right_nacbar_top_a}>
+                    <span className={classes.font_a}>快报</span>
+                    <span className={classes.font_b}><a href='#'>更多</a></span>
                 </div>
 
                 <hr />
@@ -148,7 +148,7 @@ function Rightnav() {
                 </div>
             </div>
 
-            <div className='right_nacbar_center'>
+            <div className={classes.right_nacbar_center}>
                 <ul>
                     {TopNav.TopNav.slice(8, 20).map((nav) => (
                         <li key={nav.id}>
@@ -159,7 +159,7 @@ function Rightnav() {
                 </ul>
             </div>
 
-            <div className='right_nacbar_buttom'>
+            <div className={classes.right_nacbar_buttom}>
                 {TopNav.TopNav.slice(20).map((nav) => (
                     <img src={nav.img} key={nav.id}></img>
                 ))}

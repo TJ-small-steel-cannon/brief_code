@@ -3,19 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
-import Navbar from './navbar/navbar'
-import Logo from './logo and Search_box/logo';
-import Category from './Product_category_bar/Product_category_bar';
-import Leftnav from './Left_navigation_bar/Left_navigation_bar';
-import CarouselMap from './Carousel_map/Carousel_map';
-import Rightnav from './Right_navigation_bar/Right_navigation_bar';
-import Recommended from './Recommended_today/Recommended_today';
-import Hot from './Hot_Selling_Rankings/Hot_Selling_Rankings';
-import Guess from './Guess_you_like/Guess_you_like';
-import Household from './Household_appliances/Household_appliances';
-import BottomMenu from './Bottom_menu/Bottom_menu';
-import BackToTop from './Back_to_top/Back_to_top';
-// import SecondaryMenu from './Secondary_menu/Secondary_menu';
+import Navbar from './navbar'
+import Logo from './logo_and_Search_box';
+import Category from './Product_category_bar';
+import Leftnav from './Left_navigation_bar';
+import CarouselMap from './Carousel_map';
+import Rightnav from './Right_navigation_bar';
+import Recommended from './Recommended_today';
+import Hot from './Hot_Selling_Rankings';
+import Guess from './Guess_you_like';
+import Household from './Household_appliances';
+import BottomMenu from './Bottom_menu';
+import BackToTop from './Back_to_top';
 
 function App() {
   return (
@@ -34,9 +33,6 @@ function App() {
           {/* 左侧导航栏 */}
           <Leftnav></Leftnav>
           {/* 二级菜单 */}
-          {/* <SecondaryMenu></SecondaryMenu> */}
-
-          
 
           {/* 轮播图 */}
           <CarouselMap></CarouselMap>

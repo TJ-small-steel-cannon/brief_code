@@ -2,7 +2,7 @@ import { Carousel } from 'react-bootstrap';
 import carouselmap1 from './carouselmap1.png'
 import carouselmap2 from './carouselmap2.png'
 import { useState } from 'react';
-import './Carousel_map.css'
+import classes from './index.module.css'
 function Carousel_map() {
     const [carouselmap] = useState({
         carouselmap: [
@@ -17,7 +17,7 @@ function Carousel_map() {
         ]
     })
     return (
-        <div className='carouselmap'>
+        <div className={classes.carouselmap}>
             <Carousel>
                 {carouselmap.carouselmap.map((car) => (
                     <Carousel.Item key={car.id}>

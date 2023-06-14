@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from 'react';
-import './Household_appliances.css';
+import classes from './index.module.css'
 import { Carousel } from 'react-bootstrap';
 import hous1 from './Household_appliances1.png'
 import hous2 from './Household_appliances2.png'
@@ -68,11 +68,11 @@ function Household() {
         ]
     })
     return (
-        <div className='household_appliances'>
-            <div className='household_appliances_font'>家用电器</div>
-            <div className='household_appliances_img'>
-                <div className='household_appliances_img_a'>
-                    <div className='household_appliances_img_a_font'>
+        <div className={classes.household_appliances}>
+            <div className={classes.household_appliances_font}>家用电器</div>
+            <div className={classes.household_appliances_img}>
+                <div className={classes.household_appliances_img_a}>
+                    <div className={classes.household_appliances_img_a_font}>
                         <ul>
                             {Household.household.slice(0, 6).map((hos) => (
                                 <li key={hos.id}>{hos.value}</li>
@@ -84,7 +84,7 @@ function Household() {
                         ))}
                     </div>
                 </div>
-                <div className='household_appliances_img_b'>
+                <div className={classes.household_appliances_img_b}>
                     <Carousel>
                         {Household.household.slice(7, 9).map((hos) => (
                             <Carousel.Item key={hos.id}>
@@ -100,7 +100,7 @@ function Household() {
                     </Carousel>
                 </div>
                 {Household.household.slice(9, 12).map((hos) => (
-                    <div className='household_appliances_img_a' key={hos.id}>
+                    <div className={classes.household_appliances_img_a} key={hos.id}>
                         <div><img src={hos.img1}></img></div>
                         <div><img src={hos.img2}></img></div>
                     </div>

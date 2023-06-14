@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react"
 import img from './recommend1.png'
-import './Recommended_today.css'
+import classes from './index.module.css'
 
 function Recommended() {
     const [recommend] = useState({
@@ -26,10 +26,10 @@ function Recommended() {
     })
 
     return (
-        <div className='recommend'>
-            <ul className='recommend_ul'>
-                <li className='recommend_ul_l1'>
-                    <div className='recommend_ul_clock'>
+        <div className={classes.recommend}>
+            <ul className={classes.recommend_ul}>
+                <li className={classes.recommend_ul_l1}>
+                    <div className={classes.recommend_ul_clock}>
                         <img src={require("./clock.png")} alt=""></img>
                         <p>今日推荐</p>
                     </div>

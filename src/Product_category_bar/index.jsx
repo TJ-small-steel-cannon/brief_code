@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { useState } from "react";
-import './Product_category_bar.css'
+import classes from './index.module.css'
+import classnames from 'classnames';
+
 function Product_category_bar(){
     const [Category_data] = useState({
         Category:[
@@ -36,11 +38,14 @@ function Product_category_bar(){
             },
         ]
     })
+
+    const headerFontClasses = classnames(classes.header_font, classes.header_font_red);
+
     return(
-        <div className='headernav'>
-          <div className='header_font header_font_red'>全部商品分类</div>
+        <div className={classes.headernav}>
+          <div className={headerFontClasses}>全部商品分类</div>
           {Category_data.Category.map((cate) => (
-            <div className='header_font' key={cate.id}><a href={cate.hyperlinks}>{cate.name}</a></div>
+            <div className={classes.header_font} key={cate.id}><a href={cate.hyperlinks}>{cate.name}</a></div>
           ))}
         </div>
     )
