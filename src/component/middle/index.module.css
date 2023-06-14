@@ -9,4 +9,11 @@
     width: 90%;
     height: 100%;
     background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.msg{
+   font-size: 50px; 
 }

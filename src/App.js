@@ -14,6 +14,14 @@ function App() {
   // 最左侧缩略图块是否显示
   const [isShow, setIsShow] = useState(true);
 
+  const [viewIndex,setViewIndex]=useState(null);
+
+
+  const handleView=(index)=>{
+    console.log(index);
+    setViewIndex(index)
+  }
+
   // 当鼠标移动触发的函数
   const handleMove = (e) => {
     // 当在线上按下的时候 才会 触发 获取鼠标位置
@@ -71,7 +79,7 @@ function App() {
       }}
     >
       {/* 左边显示缩略图的*/}
-      <Left width={leftWidth} />
+      <Left width={leftWidth} onxx={handleView}/>
       {/* 左侧缩略按钮 */}
       {!isShow ? (
         <button
@@ -91,7 +99,7 @@ function App() {
         </button>
       )}
       {/* 中间显示网页的 */}
-      <Middle width={100 - rightWidth - leftWidth} />
+      <Middle width={100 - rightWidth - leftWidth} data={viewIndex}/>
       {/* 中间的线 */}
       <div
         className={classes.line}
