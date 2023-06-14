@@ -1,10 +1,7 @@
 import React from 'react'
 import Classes from './page.module.css'
-import { useRoutes } from "react-router-dom";
 import Login from '../../component/Login/Login'
-import Register from '../../component/Register/Register'
-import ForgetPwd from '../../component/ForgetPwd/ForgetPwd'
-export default function Page() {
+export default function LoginPage() {
   return (
     <div className={Classes.box}>
        <div className={Classes.head}>
@@ -15,9 +12,6 @@ export default function Page() {
        </div>
        <div className={Classes.login}>
           <Login/>
-          {/* <Register/> */}
-          {/* <ForgetPwd/> */}
-
        </div>
        
     </div>

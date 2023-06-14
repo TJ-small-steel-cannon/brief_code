@@ -1,18 +1,17 @@
 import React from 'react'
 import { useRoutes } from "react-router-dom";
-import Login from '../component/Login/Login';
-import Register from '../component/Register/Register';
-import Page from '../pages/Page/Page';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import RegisterPage from '../pages/RegisterPage/RegisterPage';
 
 export default function PageRouter() {
     const element = useRoutes([
         {
           path: "/login",
-          element: <Page/>,
+          element: <LoginPage/>,
         },
         {
             path: "/Register",
-            element: <Register/>,
+            element: <RegisterPage/>,
           },
       ]);
       return element;

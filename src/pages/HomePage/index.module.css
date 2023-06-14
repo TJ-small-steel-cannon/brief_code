@@ -48,10 +48,15 @@
     font-size: larger;
     color:rgba(255,255,255,0.3);
     border-style: none;
+    margin-top: -40px;
 }
-.right button:hover{
-    color:rgba(255,255,255,1);
-}
+
 .right button:hover{
     background-color:rgba(192, 192, 192, 0.2);
+    color:rgba(255,255,255,1);
+}
+.link{
+    padding: 0;
+    margin: 0;
+    height: 0;
 }

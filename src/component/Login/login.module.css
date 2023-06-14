@@ -8,6 +8,10 @@
     width: 100%;
     height: 100%;
 }
+.box p{
+    font-size: smaller;
+    color:rgb(181, 127, 127,0.7) ;
+}
 input{
     border: none;
     box-shadow: none;
@@ -54,4 +58,20 @@ a{
 a:hover{
     color: white;
 }
-
+.pwd{
+    display: flex;
+    width: 90%;
+    height: 50px;
+}
+.pwd input{
+    width: 80%;
+    height: 100%;
+    
+}
+.pwd img{
+    width: 10%;
+    margin-left: 20px;
+    height: 60%;
+    margin-top: 30px;
+    z-index: 999;
+}

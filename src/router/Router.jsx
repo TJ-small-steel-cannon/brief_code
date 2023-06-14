@@ -1,8 +1,10 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import Page from "../pages/Page/Page";
-import Login from "../component/Login/Login";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import ForgetPwd from "../component/ForgetPwd/ForgetPwd";
+import ForgetPwdPage from "../pages/ForgetPwdPage/ForgetPwdPage";
 
 export default function Router() {
   const element = useRoutes([
@@ -12,12 +14,16 @@ export default function Router() {
     },
     {
       path: "/login",
-      element: <Page/>,
+      element: <LoginPage/>,
     },
     {
       path: "/register",
-      element: <Page />,
+      element: <RegisterPage />,
     },
+    {
+      path: "/ForgetPwd",
+      element: <ForgetPwdPage />,
+    }
   ]);
   return element;
 }

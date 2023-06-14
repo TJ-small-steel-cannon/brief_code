@@ -19,8 +19,8 @@ export default function HomePage() {
             </ul>
           </div>
           <div className={Classes.right}>
-            <Link to="/login"><button>登录</button></Link>
-            <Link to="/register"><button>注册</button></Link>
+            <Link to="/login" className={Classes.link}><button>登录</button></Link>
+            <Link to="/register" className={Classes.link}><button>注册</button></Link>
           </div>
         </div>
         <div >
