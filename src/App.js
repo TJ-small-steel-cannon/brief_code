@@ -5,6 +5,12 @@ import { useState, useEffect } from "react";
 import Left from "./component/left";
 
 function App() {
+  //获取输入框的值
+  const [newInputValue, setInputNewValue] = useState(" ");
+  // //处理输入框的值
+  const [passedValue, setPassedValue] = useState("0");
+  //显示那个输入框组
+  const [showInput, setShowInput] = useState('-1')
   //消失动画
   const [isVisible, setIsVisible] = useState(true);
   // 哪个组件使用
@@ -70,6 +76,29 @@ function App() {
   const handleComponentClick = (component) => {
     setActiveComponent(component);
   };
+  //html内点击事件
+  const handleHtmlComponentClick = (htmlComponent) => {
+    setShowInput(htmlComponent);
+    console.log(showInput)
+  };
+
+  const handleInputChange = (event) => {
+    // setNewValue(event.target.value);
+    const newValue = event.target.value;
+    setInputNewValue(newValue);
+    console.log('新的输入框值:', newValue);
+  };
+
+  const tijiao = () => {
+    // setPassedValue(newValue);
+    // setPassedValue(newInputValue);
+    console.log('提交按钮事件中获取到的新的输入框值:', newInputValue);
+  }
+  // useEffect(() => {
+  //   console.log('EFFECT中获取到的新的输入框值:', newInputValue);
+  // }, [newInputValue])
+
+
   return (
     <div
       className={classes.app}
@@ -99,7 +128,7 @@ function App() {
         </button>
       )}
       {/* 中间显示网页的 */}
-      <Middle width={100 - rightWidth - leftWidth} activecomponent={activeComponent} />
+      <Middle width={100 - rightWidth - leftWidth} activecomponent={activeComponent} handlehtmlClick={handleHtmlComponentClick} thevalue={newInputValue} />
       {/* 中间的线 */}
       <div
         className={classes.line}
@@ -111,7 +140,7 @@ function App() {
         }}
       ></div>
       {/* 右边显示详情信息的 */}
-      <Right width={rightWidth} />
+      <Right width={rightWidth} showinput={showInput} handleinputChange={handleInputChange} tiJiao={tijiao} />
     </div>
   );
 }

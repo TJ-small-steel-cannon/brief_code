@@ -35,3 +35,17 @@
     background: #fafbc2;
 
 }
+
+.button {
+    min-width: 18px;
+    width: 8%;
+    height: 1%;
+    background-color: #444654;
+    color: #ffffff;
+}
+
+.mydiv {
+    height: 3%;
+    width: 5%;
+    background-color: orange;
+}
