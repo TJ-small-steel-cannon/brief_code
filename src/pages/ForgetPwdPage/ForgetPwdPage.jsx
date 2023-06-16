@@ -6,7 +6,7 @@ export default function ForgetPwdPage() {
   return (
     <div className={Classes.box}>
        <div className={Classes.head}>
-        <Link to='/'>
+        <Link id={Classes.link} to='/'>
         <div className={Classes.logo}>
                     <img src='/img/logo.png' alt='logo'/>
             </div>

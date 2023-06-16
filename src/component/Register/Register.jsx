@@ -94,7 +94,10 @@ const IsAllValid=()=>{
       //   {username:"123ASDc",password:"123ASDc"}
       // ])
       // window.localStorage.setItem('aaa',A);
-     const existingData=window.localStorage.getItem(username);
+     var A=JSON.stringify([
+      {username:"username",password:"password"}
+     ]);
+     window.localStorage.setItem('aaa',A)
       console.log(window.localStorage.getItem('aaa'));
       var userInfoData=JSON.parse(window.localStorage.getItem('aaa'))
       // console.log(userInfoData);
@@ -109,8 +112,8 @@ const IsAllValid=()=>{
       let Arr=[...userInfoData]
       Arr.push({username:username,password:password})
       console.log("asdfghj"+Arr);
-      var A=JSON.stringify(Arr)
-      window.localStorage.setItem('aaa',A);
+      var B=JSON.stringify(Arr)
+      window.localStorage.setItem('aaa',B);
       console.log(window.localStorage.getItem('aaa'));
    
   }else{
