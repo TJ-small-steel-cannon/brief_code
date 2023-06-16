@@ -9,7 +9,7 @@ export default function HomePage() {
     <div className={Classes.body}>
         <div className={Classes.head}>
           <div className={Classes.logo}>
-            <img  src='/img/logo.png' alt='logo'/>
+           <img  src='/img/logo.png' alt='logo'/>
           </div>
           <div className={Classes.center}>
             <ul>
@@ -19,8 +19,8 @@ export default function HomePage() {
             </ul>
           </div>
           <div className={Classes.right}>
-            <Link to="/login" className={Classes.link}><button>登录</button></Link>
-            <Link to="/register" className={Classes.link}><button>注册</button></Link>
+            <Link id={Classes.link} to="/login" className={Classes.link}><button>登录</button></Link>
+            <Link id={Classes.relink} to="/register" className={Classes.link}><button>注册</button></Link>
           </div>
         </div>
         <div >
