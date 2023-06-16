@@ -6,9 +6,10 @@ import Left from "./component/left";
 
 function App() {
   //获取输入框的值
-  const [newInputValue, setInputNewValue] = useState(" ");
-  // //处理输入框的值
-  const [passedValue, setPassedValue] = useState("0");
+  const [newInputValue, setInputNewValue] = useState({
+    theWidth: ''
+  });
+
   //显示那个输入框组
   const [showInput, setShowInput] = useState('-1')
   //消失动画
@@ -86,13 +87,15 @@ function App() {
     // setNewValue(event.target.value);
     const newValue = event.target.value;
     setInputNewValue(newValue);
+    const newObject = { ...newInputValue, theWidth: newValue };
+    setInputNewValue(newObject);
     console.log('新的输入框值:', newValue);
   };
 
   const tijiao = () => {
     // setPassedValue(newValue);
     // setPassedValue(newInputValue);
-    console.log('提交按钮事件中获取到的新的输入框值:', newInputValue);
+    console.log('提交按钮事件中获取到的新的输入框值:', newInputValue.theWidth);
   }
   // useEffect(() => {
   //   console.log('EFFECT中获取到的新的输入框值:', newInputValue);
