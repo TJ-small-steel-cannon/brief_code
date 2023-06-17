@@ -37,12 +37,12 @@ export default function ForgetPwd() {
       <p>忘记密码?</p>
       <p>输入您的电子邮件,手机号</p>
       <p>我们将向您发送密码重置说明</p>
-      <input placeholder='账号' value={count} onChange={handleCountChange} /><br/>
+      <input className={Classes.input} placeholder='账号' value={count} onChange={handleCountChange} /><br/>
       {isCountValid ? <p>Count is valid</p> : <p>Count is invalid</p>}
 
-      <input placeholder='手机号' type="text" value={phone} onChange={handleChange} />
+      <input className={Classes.input} placeholder='手机号' type="text" value={phone} onChange={handleChange} />
       {isValid ? <p>Phone number is valid</p> : <p>Phone number is invalid</p>}
-      <button className={Classes.lo}>继续</button><br/>
+      <button  className={Classes.lo}>继续</button><br/>
       <Link to='/Login'>返回到上一级</Link>
    </div>
     </div>

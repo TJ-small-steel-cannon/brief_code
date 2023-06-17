@@ -64,14 +64,14 @@ const handleSubmit=(e)=>{
 }
   return (
    <div className={Classes.box}>
-      <input placeholder='用户名' type="text" value={username} onChange={handleUsernameChange} />
+      <input className={Classes.input} placeholder='用户名' type="text" value={username} onChange={handleUsernameChange} />
       {isValid ? (
         <p>用户名有效</p>
       ) : (
         <p>用户名无效，用户名必须由4至16个字符的字母、数字或下划线组成</p>
       )}
       <div className={Classes.pwd}>
-      <input placeholder='密码'
+      <input className={Classes.input} placeholder='密码'
         type={showPassword ? 'text' : 'password'}
         value={password}
         onChange={handlePasswordChange}

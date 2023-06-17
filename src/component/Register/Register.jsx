@@ -2,12 +2,16 @@
 import React, { useState } from 'react'
 import Classes from './register.module.css';
 import { Link } from 'react-router-dom';
+import { MD5 } from "crypto-js";
 
 export default function Register() {
   // 设置密码显示隐藏
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+  console.log("password"+password);
+  const md5Hash=MD5(password).toString();
+  console.log("md5:"+md5Hash);
   const handlePasswordChange = (event) => {
     console.log("value"+event.target.value);
     const filter=(event.target.value).replace(/[\s\u4e00-\u9fa5]/g,'');
@@ -84,7 +88,6 @@ const handleCompare=()=>{
   setConValid(passwordsMatch);
 }
 
-
 const IsAllValid=()=>{
   // cun->字符串  qu->字符串转数组
   if(isValid&&isVaildPwdRex&&isPhoneVaild&&isConVaild){
@@ -94,11 +97,10 @@ const IsAllValid=()=>{
       //   {username:"123ASDc",password:"123ASDc"}
       // ])
       // window.localStorage.setItem('aaa',A);
-     var A=JSON.stringify([
-      {username:"username",password:"password"}
-     ]);
-     window.localStorage.setItem('aaa',A)
-      console.log(window.localStorage.getItem('aaa'));
+      if(window.localStorage.getItem('aaa')===null){
+        var A=JSON.stringify([]);
+        window.localStorage.setItem('aaa',A)
+      }
       var userInfoData=JSON.parse(window.localStorage.getItem('aaa'))
       // console.log(userInfoData);
 // 左面每一项  右面数组
@@ -115,7 +117,7 @@ const IsAllValid=()=>{
       var B=JSON.stringify(Arr)
       window.localStorage.setItem('aaa',B);
       console.log(window.localStorage.getItem('aaa'));
-   
+      alert("注册成功！")
   }else{
     alert("请检查所填信息的正确性！");
   }
@@ -138,14 +140,14 @@ const IsAllValid=()=>{
   return (
     <div className={Classes.box}>
     <p className={Classes.crt}>Create Your Tome Account</p>
-    <input placeholder='用户名' type="text" value={username} onChange={handleUsernameChange} />
+    <input className={Classes.input} placeholder='用户名' type="text" value={username} onChange={handleUsernameChange} />
       {isValid ? (
         <p className={Classes.p}>用户名有效</p>
       ) : (
         <p className={Classes.p}>用户名无效，用户名必须由4至16个字符的字母、数字或下划线组成</p>
       )}
       <div className={Classes.pwd}>
-      <input placeholder='密码'
+      <input className={Classes.input} placeholder='密码'
         type={showPassword ? 'text' : 'password'}
         value={password}
         onChange={handlePasswordChange}
@@ -166,7 +168,7 @@ const IsAllValid=()=>{
       }
       {/* ------------------------- */}
      <div className={Classes.rePwd}>
-     <input placeholder='确认密码'
+     <input className={Classes.input} placeholder='确认密码'
         type={reShowPassword ? 'text' : 'password'}
         value={rePassword}
         onChange={(e)=>{rehandlePasswordChange(e);handleConPwd(e);}}
@@ -181,10 +183,10 @@ const IsAllValid=()=>{
      </div>
      {isConVaild ? <p>密码匹配</p> : <p>密码不匹配</p>}
   
-     <input type="text"placeholder='手机号' value={phone} onChange={handlePhoneChange} />
+     <input className={Classes.input} type="text"placeholder='手机号' value={phone} onChange={handlePhoneChange} />
     {isPhoneVaild ? <p className={Classes.p}>手机号合法</p> : <p className={Classes.p}>手机号不合法</p>}
       <Link to='/Login' >已有账号，去登录</Link>
-      <button onClick={IsAllValid}>注册</button><br/>
+      <button className={Classes.Button} onClick={IsAllValid}>注册</button><br/>
      
    </div>
   )
