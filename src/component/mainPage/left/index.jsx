@@ -6,8 +6,12 @@ export default function Left(props) {
         <div className={classes.container} style={{ width: props.width + "%" }}>
             <span className={classes.text}>缩略图</span>
             <div className={classes.bigbox}>
-                <div className={classes.box} onClick={() => props.handleonclick("a")}></div>
-                <div className={classes.box} onClick={() => props.handleonclick("b")}></div>
+                <div className={classes.box} onClick={() => props.handleonclick("a")}>
+                    <img src="/img/min1.png" alt="" />
+                </div>
+                <div className={classes.box} onClick={() => props.handleonclick("b")}>
+                    <img src="/img/min2.png" alt="" />
+                </div>
                 <div className={classes.box} onClick={() => props.handleonclick("c")}></div>
                 <div className={classes.box} onClick={() => props.handleonclick("d")}></div>
             </div>

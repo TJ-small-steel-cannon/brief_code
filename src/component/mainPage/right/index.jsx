@@ -11,9 +11,16 @@ export default function Right(props) {
             {props.showinput === 1 && <div><input type="text" placeholder="我是输入框1" onChange={props.handleinputChange}></input>
                 <button>我是输入框1的按钮</button>
             </div>}
-            {props.showinput === 2 && <div><input type="text" placeholder="请输入div的宽" onChange={props.handleinputChange}></input>
+            {props.showinput === 2 && <div><input type="text" placeholder="请输入div1的宽"  onChange={(e)=>{props.handleinputChange(e,2)}}></input>
+                <button onClick={props.tiJiao}>我是输入框1的按钮</button>
+            </div>}
+            {props.showinput === 3 && <div><input type="text" placeholder="请输入div2的宽"  onChange={(e)=>{props.handleinputChange(e,3)}}></input>
                 <button onClick={props.tiJiao}>我是输入框2的按钮</button>
             </div>}
+            {props.showinput === "Navbar" && <div><input type="text" placeholder="请输入Navbar的背景颜色"  onChange={(e)=>{props.handleinputChange(e,"Navbar")}}></input>
+                <button onClick={props.tiJiao}>我是输入框2的按钮</button>
+            </div>}
+            
         </div>
     )
 }
